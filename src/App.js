@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+
 import './App.css';
+import Navbar from './components/Navbar';
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import { HiMenuAlt4 } from 'react-icons/hi'
+import Home from './pages/home';
+import About from './pages/about';
 
 function App() {
+
+  const [ showNav, setShowNav ] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <div className="App">
+          <header>
+            <HiMenuAlt4 onClick={() => setShowNav(!showNav)} />
+          </header>
+
+          <Navbar show={showNav} />
+
+          <div className='main'>
+            <Route path="/" exact={true} component ={Home}/>
+            <Route path="/about" exact={true} component ={About}/>            
+
+          </div>
+        </div>
+    </Router>
   );
 }
 

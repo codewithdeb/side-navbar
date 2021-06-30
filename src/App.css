@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding:0;
+  font-family: 'Lato', sans-serif;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+header {
+  padding: 5vh;
+  background: #001245;
+  height: 40px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.sidenav {
+  width: 240px;
+  background: #001245;
+  position: absolute;
+  height: 95vh;
+  padding: 0 30px;
+  transition: all 0.3s;
+  left: -100%;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidenav.active {
+  left:0;
+}
+
+
+.logo {
+  width: 60px;
+}
+
+ul {
+  padding: 0;
+
+}
+
+ul li {
+  list-style-type: none;
+  margin: 10px 0;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+
+ul  li a:hover, 
+ul  li a:active {
+  background: grey;
+}
+
+header svg {
+  font-size: 40px;
+}
+
+.main {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
